@@ -785,6 +785,7 @@ pub fn execute_search(
     } else {
         let ranking_rules =
             get_ranking_rules_for_placeholder_search(ctx, sort_criteria, geo_param)?;
+
         bucket_sort(
             ctx,
             ranking_rules,

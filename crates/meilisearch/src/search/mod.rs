@@ -1103,10 +1103,10 @@ pub fn perform_search(
             hits_per_page,
             page: page.unwrap_or(1),
             total_pages,
-            total_hits: number_of_hits,
+            total_hits: candidates.len() as usize,
         }
     } else {
-        HitsInfo::OffsetLimit { limit, offset, estimated_total_hits: number_of_hits }
+        HitsInfo::OffsetLimit { limit, offset, estimated_total_hits: candidates.len() as usize }
     };
 
     let (facet_distribution, facet_stats) = facets
